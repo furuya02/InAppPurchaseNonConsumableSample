@@ -1,25 +1,76 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LAa-Il-auI">
+                                <rect key="frame" x="172" y="50" width="30" height="30"/>
+                                <state key="normal" title="購入"/>
+                                <connections>
+                                    <action selector="tapPurchaseButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="apJ-YV-iEc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jGP-40-V8v">
+                                <rect key="frame" x="158" y="110" width="60" height="30"/>
+                                <state key="normal" title="リストア"/>
+                                <connections>
+                                    <action selector="tapRestoreButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zsc-B3-dZM"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xTn-Cd-4qD">
+                                <rect key="frame" x="10" y="170" width="355" height="467"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="jGP-40-V8v" firstAttribute="top" secondItem="LAa-Il-auI" secondAttribute="bottom" constant="30" id="0B0-I3-az5"/>
+                            <constraint firstItem="jGP-40-V8v" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1u5-mp-gIL"/>
+                            <constraint firstItem="LAa-Il-auI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BwE-Ra-5kU"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="xTn-Cd-4qD" secondAttribute="bottom" constant="30" id="C3V-h7-08n"/>
+                            <constraint firstItem="xTn-Cd-4qD" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" constant="30" id="DsU-4H-jHE"/>
+                            <constraint firstItem="xTn-Cd-4qD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="30" id="V5b-3m-aCl"/>
+                            <constraint firstAttribute="trailing" secondItem="xTn-Cd-4qD" secondAttribute="trailing" constant="10" id="XXY-4p-l5z"/>
+                            <constraint firstItem="xTn-Cd-4qD" firstAttribute="top" secondItem="jGP-40-V8v" secondAttribute="bottom" constant="30" id="gzD-gm-9Dj"/>
+                            <constraint firstItem="xTn-Cd-4qD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="kvS-lo-ddq"/>
+                            <constraint firstItem="LAa-Il-auI" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="nPm-db-RNd"/>
+                            <constraint firstItem="xTn-Cd-4qD" firstAttribute="top" secondItem="jGP-40-V8v" secondAttribute="bottom" constant="30" id="wEG-ka-4MZ"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="xTn-Cd-4qD" secondAttribute="bottom" constant="30" id="ziS-Gs-Jag"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="DsU-4H-jHE"/>
+                                <exclude reference="V5b-3m-aCl"/>
+                                <exclude reference="gzD-gm-9Dj"/>
+                                <exclude reference="C3V-h7-08n"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="textView" destination="xTn-Cd-4qD" id="gf6-6a-SaZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="308.5" y="429.5"/>
         </scene>
     </scenes>
 </document>
